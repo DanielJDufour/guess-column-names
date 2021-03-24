@@ -19,4 +19,6 @@ function guessColumnNames({ data, debug=false, path = "" }) {
   return Array.from(results).sort();
 }
 
-module.exports = guessColumnNames;
+if (typeof module === 'object') module.exports = guessColumnNames;
+if (typeof window === 'object') window.guessColumnNames = guessColumnNames;
+if (typeof self === 'object') self.guessColumnNames = guessColumnNames;
